@@ -46,12 +46,12 @@ let draggingElement = null;
         function swapImages(image1, image2) {
             const container = document.getElementById('parent');
             const images = Array.from(container.children);
-            const index1 = images.indexOf(image1);
-            const index2 = images.indexOf(image2);
+            const drag1 = images.indexOf(image1);
+            const drag2 = images.indexOf(image2);
 
-            if (index1 !== -1 && index2 !== -1) {
+            if (drag1 !== -1 && drag2 !== -1) {
                 // Swap the images in the array
-                [images[index1], images[index2]] = [images[index2], images[index1]];
+                [images[drag1], images[drag2]] = [images[drag2], images[drag1]];
 
                 // Update the DOM to reflect the new order
                 images.forEach((image) => container.appendChild(image));
